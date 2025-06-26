@@ -1,5 +1,6 @@
 {
     "name": "拡張機能",
+    "version": "0.0.1",
     "description": "",
     "dependencies": {
         "core": "*",
