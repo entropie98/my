@@ -1,0 +1,42 @@
+{
+    "name": "拡張機能",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "microphone": "*",
+        "datalogger": "*",
+        "audio-recording": "*",
+        "servo": "*",
+        "pxt-sonar": "github:microsoft/pxt-sonar#v0.0.6",
+        "SSD1306_OLED": "github:tinkertanker/pxt-oled-ssd1306#v2.0.17",
+        "pxt-katakana": "github:mbitfun/pxt-katakana#v1.0.16",
+        "Sound Level in decibels (dB)": "github:microbit-foundation/pxt-sound-level-db#v0.1.6",
+        "pxt-mcar": "github:siyeenove/pxt_mcar#v1.1.3",
+        "lcd1602": "github:xuefengedu/pxt-lcd1602_CN#0ecac824f43d544bf553459adb2696b5f0d3d8d2",
+        "power": "github:microbit-foundation/pxt-microbit-v2-power#v0.2.7",
+        "midi": "github:microsoft/pxt-midi#v2.2.0",
+        "DS1307": "github:makecode-extensions/ds1307#v1.2.0",
+        "weatherbit": "github:sparkfun/pxt-weather-bit#v0.0.19",
+        "microbit-pxt-timeanddate": "github:bsiever/microbit-pxt-timeanddate#v2.0.33",
+        "linebeacon": "github:pizayanz/pxt-linebeacon#v0.0.14",
+        "radio": "*",
+        "radio-broadcast": "*"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "7.0.61",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
