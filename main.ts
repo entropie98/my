@@ -1,48 +1,40 @@
 enum RadioMessage {
-    message1 = 49434
+    右 = 7189,
+    左 = 33982,
+    ストップ = 41668,
+    前進 = 48505,
+    message1 = 49434,
+    後進 = 64087
 }
-function LED青 () {
-    mCar.rgbLight(mCar.McarRGBLight.RGBA, 0x0000ff)
+function スピーカーオン () {
+    pins.setAudioPin(DigitalPin.P0)
 }
-function リモコン右送信 () {
-    radio.sendValue("name", 0)
+function 右速度 (数値: number) {
+    pins.digitalWritePin(DigitalPin.P15, 0)
+    pins.digitalWritePin(DigitalPin.P16, 数値)
 }
-function LED黄 () {
-    mCar.rgbLight(mCar.McarRGBLight.RGBA, 0xffff00)
+function 左速度 (数値: number) {
+    pins.digitalWritePin(DigitalPin.P15, 数値)
+    pins.digitalWritePin(DigitalPin.P16, 0)
 }
-function 後進2 () {
-    mCar.setWheelDirectionSpeed(mCar.McarWheels.AllWheel, mCar.WheelDir.BW, 100)
+function 速後速度 (数値: number) {
+    pins.analogWritePin(AnalogPin.P13, 0)
+    pins.analogWritePin(AnalogPin.P14, 数値)
 }
-function LED赤 () {
-    mCar.rgbLight(mCar.McarRGBLight.RGBA, 0xff0000)
+function ストップ () {
+    pins.analogWritePin(AnalogPin.P15, 0)
+    pins.analogWritePin(AnalogPin.P16, 0)
+    pins.analogWritePin(AnalogPin.P13, 0)
+    pins.analogWritePin(AnalogPin.P14, 0)
+    pins.digitalWritePin(DigitalPin.P15, 0)
+    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P13, 0)
+    pins.digitalWritePin(DigitalPin.P14, 0)
 }
-function LED緑 () {
-    mCar.rgbLight(mCar.McarRGBLight.RGBA, 0x00ff00)
+function 前進速度 (数値: number) {
+    pins.analogWritePin(AnalogPin.P13, 数値)
+    pins.analogWritePin(AnalogPin.P14, 0)
 }
-function リモコン前送信 () {
-    radio.sendMessage(RadioMessage.message1)
-}
-function リモコン後送信 () {
-    radio.sendNumber(0)
-}
-function 右回り2 () {
-    mCar.setWheelDirectionSpeed(mCar.McarWheels.RightWheel, mCar.WheelDir.FW, 100)
-}
-function 電池残量 () {
-    basic.showNumber(mCar.batteryLevel(mCar.BatteryType.AA))
-}
-function 左回り2 () {
-    mCar.setWheelDirectionSpeed(mCar.McarWheels.LeftWheel, mCar.WheelDir.FW, 100)
-}
-function 停止2 () {
-    mCar.carStop()
-}
-function 前進2 () {
-    mCar.setWheelDirectionSpeed(mCar.McarWheels.AllWheel, mCar.WheelDir.FW, 100)
-}
-function リモコン左送信2 () {
-    radio.sendString("")
-}
-function LEDオフ () {
-    mCar.turnOffAllHeadlights()
+function スピーカーオフ () {
+    pins.setAudioPinEnabled(false)
 }
